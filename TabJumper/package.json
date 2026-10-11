@@ -1,0 +1,7 @@
+{
+  "name": "tab-jumper",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": { "test": "node --test", "check": "node --check popup.js && node --check tabs.js && node --check scripts/bump-version.js && node --check scripts/generate-icons.js", "bump": "node scripts/bump-version.js", "icons": "node scripts/generate-icons.js" }
+}

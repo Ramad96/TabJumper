@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tab Jumper</title>
+  <link rel="stylesheet" href="popup.css">
+  <script type="module" src="popup.js"></script>
+</head>
+<body>
+  <header><img class="brand-icon" src="icons/icon-128.png" width="38" height="38" alt=""><div><h1>Tab Jumper</h1><p>Every open tab, a few keys away.</p></div><span id="shortcut" class="shortcut"></span></header>
+  <main>
+    <div class="search-box"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="Search open tabs…" aria-label="Search open tabs" role="combobox" aria-autocomplete="list" aria-expanded="true" aria-controls="results" autocomplete="off" autofocus></div>
+    <div class="toolbar"><div class="modes" role="group" aria-label="Search scope"><button id="window" aria-pressed="true">This window</button><button id="all" aria-pressed="false">All windows</button></div><span id="count" aria-live="polite"></span></div>
+    <p class="result-help">Search by tab name or address. Choosing a tab switches straight to it.</p>
+    <div id="results" role="listbox" aria-label="Open tabs"></div>
+    <p id="empty" hidden>No matches. Try another tab name or address.</p>
+    <p id="error" role="alert" hidden></p>
+  </main>
+  <footer><span><kbd>↑</kbd><kbd>↓</kbd> select</span><span><kbd>↵</kbd> switch</span><span><kbd>Alt</kbd><kbd>←</kbd><kbd>→</kbd> scope</span><span><kbd>Esc</kbd> close</span></footer>
+  <section class="product-info" aria-label="Product information">
+    <div class="product-meta"><span id="version"></span><button id="shortcut-settings" type="button">Keyboard shortcut settings</button></div>
+    <details>
+      <summary>About us</summary>
+      <p>Tab Jumper helps you find any open tab by name and switch to it without leaving your keyboard. Your tab search stays on your device.</p>
+      <p>Designed and deployed by <a href="https://amanahdigital.co.uk" target="_blank" rel="noopener noreferrer">AmanahDigital</a>.</p>
+    </details>
+  </section>
+</body>
+</html>

@@ -1,0 +1,86 @@
+:root {
+  color-scheme: light dark;
+  --bg: #ffffff;
+  --surface: #f5f5fa;
+  --border: #e3e3ec;
+  --text: #1c1b29;
+  --muted: #6b6a7d;
+  --accent: #5b4ee8;
+  --accent-soft: #ecebfd;
+  --danger: #b42318;
+  --danger-soft: #fdecea;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #18171f;
+    --surface: #23222d;
+    --border: #34333f;
+    --text: #ecebf3;
+    --muted: #a09fb2;
+    --accent: #9d94ff;
+    --accent-soft: #2d2a4d;
+    --danger: #ff8a80;
+    --danger-soft: #3b1f1f;
+  }
+}
+
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html, body { margin: 0; }
+body {
+  width: 420px;
+  background: var(--bg);
+  color: var(--text);
+  font: 13px/1.4 system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+button { font: inherit; color: inherit; cursor: pointer; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+header { display: flex; align-items: center; gap: 10px; padding: 14px 16px 10px; }
+.brand-icon { border-radius: 9px; flex: none; }
+header > div { flex: 1; min-width: 0; }
+h1 { margin: 0; font-size: 15px; font-weight: 650; }
+header p { margin: 1px 0 0; color: var(--muted); font-size: 12px; }
+.shortcut { flex: none; padding: 3px 7px; border: 1px solid var(--border); border-radius: 6px; color: var(--muted); font-size: 11px; white-space: nowrap; }
+.shortcut:empty { display: none; }
+
+main { padding: 0 16px; }
+.search-box { display: flex; align-items: center; gap: 8px; padding: 0 12px; border: 1px solid var(--border); border-radius: 10px; background: var(--surface); }
+.search-box:focus-within { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft); }
+.search-box span { color: var(--muted); font-size: 17px; }
+#search { flex: 1; min-width: 0; padding: 10px 0; border: 0; background: none; color: inherit; font: inherit; font-size: 14px; outline: none; }
+
+.toolbar { display: flex; align-items: center; justify-content: space-between; margin-top: 10px; }
+.modes { display: inline-flex; padding: 2px; border-radius: 8px; background: var(--surface); }
+.modes button { padding: 4px 10px; border: 0; border-radius: 6px; background: none; color: var(--muted); font-size: 12px; }
+.modes button[aria-pressed="true"] { background: var(--bg); color: var(--text); font-weight: 600; box-shadow: 0 1px 2px rgb(0 0 0 / 0.12); }
+#count { color: var(--muted); font-size: 12px; }
+.result-help { margin: 8px 0 6px; color: var(--muted); font-size: 11.5px; }
+
+#results { max-height: 312px; margin: 0 -6px; padding: 0 6px; overflow-y: auto; }
+.result { display: flex; align-items: center; gap: 10px; padding: 8px 10px; border-radius: 8px; cursor: pointer; }
+.result:hover { background: var(--surface); }
+.result[aria-selected="true"] { background: var(--accent-soft); }
+.item-icon { display: grid; place-items: center; flex: none; width: 28px; height: 28px; border-radius: 7px; background: var(--surface); }
+.result[aria-selected="true"] .item-icon { background: var(--bg); }
+.item-copy { flex: 1; min-width: 0; }
+.item-title, .item-detail { overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+.item-title { font-weight: 550; }
+.item-detail { color: var(--muted); font-size: 11.5px; }
+.item-action { flex: none; color: var(--accent); font-size: 11.5px; font-weight: 600; opacity: 0; }
+.result[aria-selected="true"] .item-action, .result:hover .item-action, .result.here .item-action { opacity: 1; }
+.result.here .item-action { color: var(--muted); font-weight: 500; }
+
+#empty { margin: 18px 0; color: var(--muted); text-align: center; }
+#error { margin: 10px 0; padding: 8px 10px; border-radius: 8px; background: var(--danger-soft); color: var(--danger); }
+
+footer { display: flex; flex-wrap: wrap; gap: 4px 14px; margin-top: 10px; padding: 10px 16px; border-top: 1px solid var(--border); color: var(--muted); font-size: 11.5px; }
+kbd { display: inline-block; min-width: 18px; margin-right: 3px; padding: 0 4px; border: 1px solid var(--border); border-bottom-width: 2px; border-radius: 4px; background: var(--surface); font: inherit; font-size: 10.5px; text-align: center; }
+
+.product-info { padding: 8px 16px 12px; border-top: 1px solid var(--border); color: var(--muted); font-size: 11.5px; }
+.product-meta { display: flex; align-items: center; justify-content: space-between; }
+.product-meta button { padding: 0; border: 0; background: none; color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+details { margin-top: 6px; }
+summary { cursor: pointer; color: var(--text); }
+details p { margin: 6px 0 0; }
+details a { color: var(--accent); }
